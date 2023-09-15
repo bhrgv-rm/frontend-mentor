@@ -1,0 +1,111 @@
+:root{
+  --darkcyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --verydarkblue: hsl(212, 21%, 14%);
+  --darkgrayishblue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+#parent{
+  /* text-align: center; */
+  height: 100vh;
+  background-color: var(--cream);
+}
+.parent{
+  height: calc(100vh - 20px);
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#component{
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  max-width: 600px;
+  border-radius: 10px;
+}
+#component > img{
+  height: 450px;
+  border-radius: 10px 0 0 10px;
+}
+#text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30px;
+}
+#perfume{
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#main,#sell{
+  font-family: Fraunces;
+  text-transform: capitalize;
+}
+#sell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--darkcyan);
+}
+#cost{
+  text-decoration: line-through;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 15px;
+}
+#cart{
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darkcyan);
+  color: var(--white);
+  border: 0;
+  border-radius: 10px;
+  width: 240px;
+  height: 50px;
+}
+#cart > img{
+  padding-right: 10px;
+}
+#matter{
+  text-wrap: balance;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+#main{
+  color: var(--verydarkblue);
+}
+#perfume,#matter, #cost{
+  color: var(--darkgrayishblue);
+}
+
+#attribution{
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--cream);
+}
+#attribution a{
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px){
+  #component{flex-direction: column;width: 343px;height: auto;}
+  #component > img{ width: 343px; height: 240px;object-fit: cover;border-radius: 10px 10px 0 0;}
+  #matter{text-wrap: balance;letter-spacing: .88px;}
+  #text{padding: 20px;height: 300px;}
+  #cart{width: 100%;}
+}
+
